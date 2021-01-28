@@ -9,20 +9,22 @@ import { GetStaticProps } from "next";
 import { AnimatePresence, motion } from "framer-motion";
 import Head from "next/head";
 
-export const getStaticProps: GetStaticProps = async (context) => {
-  const response = await axios.get(
-    `${process.env.NEXT_PUBLIC_API_URL}/api/random-photo`
-  );
-  return {
-    props: { ...response.data },
-  };
-};
+// export const getStaticProps: GetStaticProps = async (context) => {
+//   const response = await axios.get(
+//     `${process.env.NEXT_PUBLIC_API_URL}/api/random-photo`
+//   );
+//   return {
+//     props: { ...response.data },
+//   };
+// };
 
 interface PhotoProps {
   photo_url: string;
 }
 
-const Photo: React.FC<PhotoProps> = ({ photo_url }) => {
+const Photo: React.FC<PhotoProps> = ({
+  photo_url = "https://firebasestorage.googleapis.com/v0/b/daniel-e-rafa.appspot.com/o/0fa6d0cc-b418-4a2d-85e5-efa0c4ae6213?alt=media&token=96d9c024-e912-485f-9628-8446a8b3e0bf",
+}) => {
   const [photo, setPhoto] = useState(photo_url);
   const [isLoading, setIsLoading] = useState(false);
 
