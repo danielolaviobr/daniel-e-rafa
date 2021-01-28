@@ -5,6 +5,7 @@ import axios from "axios";
 import { GetServerSideProps } from "next";
 import { AnimatePresence, motion } from "framer-motion";
 import Head from "next/head";
+import Image from "next/image";
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
   const response = await axios.get(
@@ -49,14 +50,18 @@ const Photo: React.FC<PhotoProps> = ({ photo_url = stockPhoto }) => {
         <div className="flex flex-col items-center justify-center h-screen p-8 overflow-hidden">
           <AnimatePresence>
             {!isLoading && (
-              <motion.img
+              <motion.div
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
-                exit={{ opacity: 0 }}
-                className="max-h-full rounded shadow-md margin-4"
-                src={photo}
-                alt="Daniel e Rafa"
-              />
+                exit={{ opacity: 0 }}>
+                <Image
+                  className="w-full m-4 rounded shadow-md h-3/4"
+                  src={photo}
+                  layout="fill"
+                  objectFit="scale-down"
+                  alt="Daniel e Rafa"
+                />
+              </motion.div>
             )}
           </AnimatePresence>
         </div>

@@ -1,5 +1,4 @@
 import { NextApiRequest, NextApiResponse } from "next";
-import { format } from "date-fns";
 import app from "../../_firebase";
 
 const db = app.firestore();
