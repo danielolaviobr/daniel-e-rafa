@@ -1,7 +1,7 @@
 import React, { useCallback, useRef, useState } from "react";
 import { Button, Textarea } from "@chakra-ui/react";
 import { v4 as uuid } from "uuid";
-import app from "./_firebase";
+import app from "../_firebase";
 import Link from "next/link";
 
 const db = app.firestore();
