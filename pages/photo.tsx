@@ -1,15 +1,12 @@
 import React, { useCallback, useEffect, useState } from "react";
-import Image from "next/image";
-import { useRouter } from "next/router";
 import { Button } from "@chakra-ui/react";
 import { FiCamera } from "react-icons/fi";
 import axios from "axios";
-import Link from "next/link";
-import { GetStaticProps } from "next";
+import { GetServerSideProps } from "next";
 import { AnimatePresence, motion } from "framer-motion";
 import Head from "next/head";
 
-export const getStaticProps: GetStaticProps = async (context) => {
+export const getServerSideProps: GetServerSideProps = async (context) => {
   const response = await axios.get(
     `${process.env.NEXT_PUBLIC_API_URL}/api/random-photo`
   );

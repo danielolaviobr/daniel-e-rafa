@@ -1,19 +1,20 @@
-import React, { useState } from "react";
+import React from "react";
 import { Button, Heading, Text } from "@chakra-ui/react";
 import Link from "next/link";
-import { AnimatePresence, motion } from "framer-motion";
+// import { AnimatePresence, motion } from "framer-motion";
 import Head from "next/head";
 import { format } from "date-fns";
 import axios from "axios";
+import { GetServerSideProps } from "next";
 
-export async function getStaticProps(context) {
+export const getServerSideProps: GetServerSideProps = async (context) => {
   const response = await axios.get(
     `${process.env.NEXT_PUBLIC_API_URL}/api/random-message`
   );
   return {
     props: { ...response.data },
   };
-}
+};
 
 interface HomeProps {
   message: string;
