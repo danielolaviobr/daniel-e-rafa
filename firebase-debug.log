@@ -1,0 +1,27 @@
+[debug] [2021-01-27T13:34:42.803Z] ----------------------------------------------------------------------
+[debug] [2021-01-27T13:34:42.805Z] Command:       /usr/local/bin/node /usr/local/bin/firebase deploy --only storage
+[debug] [2021-01-27T13:34:42.805Z] CLI Version:   9.2.1
+[debug] [2021-01-27T13:34:42.805Z] Platform:      darwin
+[debug] [2021-01-27T13:34:42.805Z] Node Version:  v12.19.0
+[debug] [2021-01-27T13:34:42.807Z] Time:          Wed Jan 27 2021 10:34:42 GMT-0300 (Brasilia Standard Time)
+[debug] [2021-01-27T13:34:42.807Z] ----------------------------------------------------------------------
+[debug] [2021-01-27T13:34:42.807Z] 
+[debug] [2021-01-27T13:34:42.814Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2021-01-27T13:34:42.814Z] > authorizing via signed-in user
+[debug] [2021-01-27T13:34:42.815Z] [iam] checking project daniel-e-rafa for permissions ["firebase.projects.get","firebaserules.releases.create","firebaserules.releases.update","firebaserules.rulesets.create"]
+[debug] [2021-01-27T13:34:42.817Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/daniel-e-rafa:testIamPermissions  
+ {"permissions":["firebase.projects.get","firebaserules.releases.create","firebaserules.releases.update","firebaserules.rulesets.create"]}
+[debug] [2021-01-27T13:35:12.844Z] [iam] error while checking permissions, command may fail: FirebaseError: Server Error. getaddrinfo ENOTFOUND cloudresourcemanager.googleapis.com
+[info] 
+[info] === Deploying to 'daniel-e-rafa'...
+[info] 
+[info] i  deploying storage 
+[debug] [2021-01-27T13:35:12.847Z] >>> HTTP REQUEST GET https://appengine.googleapis.com/v1/apps/daniel-e-rafa  
+ 
+[info] 
+
+There was an issue deploying your functions. Verify that your project has a Google App Engine instance setup at https://console.cloud.google.com/appengine and try again. If this issue persists, please contact support.
+[debug] [2021-01-27T13:44:29.641Z] Error: getaddrinfo ENOTFOUND appengine.googleapis.com
+    at GetAddrInfoReqWrap.onlookup [as oncomplete] (dns.js:66:26)
+[error] 
+[error] Error: Server Error. getaddrinfo ENOTFOUND appengine.googleapis.com
