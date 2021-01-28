@@ -11,7 +11,7 @@ export async function getStaticProps(context) {
     `${process.env.NEXT_PUBLIC_API_URL}/api/random-message`
   );
   return {
-    props: { ...response.data }, // will be passed to the page component as props
+    props: { ...response.data },
   };
 }
 

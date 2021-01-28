@@ -25,8 +25,13 @@ interface PhotoProps {
 const Photo: React.FC<PhotoProps> = ({
   photo_url = "https://firebasestorage.googleapis.com/v0/b/daniel-e-rafa.appspot.com/o/0fa6d0cc-b418-4a2d-85e5-efa0c4ae6213?alt=media&token=96d9c024-e912-485f-9628-8446a8b3e0bf",
 }) => {
-  const [photo, setPhoto] = useState(photo_url);
-  const [isLoading, setIsLoading] = useState(false);
+  const [photo, setPhoto] = useState("");
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    setPhoto(photo_url);
+    setIsLoading(false);
+  }, []);
 
   const updatePhoto = useCallback(async () => {
     setIsLoading(true);
