@@ -6,14 +6,14 @@ import Head from "next/head";
 import { format } from "date-fns";
 import axios from "axios";
 
-// export async function getStaticProps(context) {
-//   const response = await axios.get(
-//     `${process.env.NEXT_PUBLIC_API_URL}/api/random-message`
-//   );
-//   return {
-//     props: { ...response.data }, // will be passed to the page component as props
-//   };
-// }
+export async function getStaticProps(context) {
+  const response = await axios.get(
+    `${process.env.NEXT_PUBLIC_API_URL}/api/random-message`
+  );
+  return {
+    props: { ...response.data }, // will be passed to the page component as props
+  };
+}
 
 interface HomeProps {
   message: string;
