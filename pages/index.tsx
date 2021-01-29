@@ -6,6 +6,7 @@ import Head from "next/head";
 import { format } from "date-fns";
 import axios from "axios";
 import { GetServerSideProps } from "next";
+import { Html } from "next/document";
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
   const response = await axios.get(
@@ -46,6 +47,8 @@ export default function Home({
           href="/favicon-16x16.png"
         />
         <title>Daniel ❤️ Rafa</title>
+        <Html lang="pt-br" />
+        <meta name="description" content="Uma historia de amor"/>
       </Head>
       <div className="flex flex-col items-center justify-center w-screen h-screen bg-blue-300">
         <div className="flex flex-col items-center justify-center px-12 py-8 m-4 bg-white rounded-lg shadow-md">

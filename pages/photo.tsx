@@ -1,10 +1,11 @@
 import React, { useCallback, useEffect, useState } from "react";
-import { Button } from "@chakra-ui/react";
+import { Button, Heading } from "@chakra-ui/react";
 import { FiCamera } from "react-icons/fi";
 import axios from "axios";
 import { GetServerSideProps } from "next";
 import { AnimatePresence, motion } from "framer-motion";
 import Head from "next/head";
+import { Html } from "next/document";
 import Image from "next/image";
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
@@ -44,24 +45,40 @@ const Photo: React.FC<PhotoProps> = ({ photo_url = stockPhoto }) => {
   return (
     <>
       <Head>
+        <link
+          rel="apple-touch-icon"
+          sizes="180x180"
+          href="/apple-touch-icon.png"
+        />
+        <link
+          rel="icon"
+          type="image/png"
+          sizes="32x32"
+          href="/favicon-32x32.png"
+        />
+        <link
+          rel="icon"
+          type="image/png"
+          sizes="16x16"
+          href="/favicon-16x16.png"
+        />
         <title>Daniel ❤️ Rafa</title>
+        <Html lang="pt-br" />
+        <meta name="description" content="Uma historia de amor" />
       </Head>
       <div className="flex flex-col items-center justify-center h-screen p-8 overflow-hidden bg-blue-300">
+        <Heading>Daniel ❤️ Rafa</Heading>
         <div className="flex flex-col items-center justify-center h-screen p-8 overflow-hidden">
           <AnimatePresence>
             {!isLoading && (
-              <motion.div
+              <motion.img
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
-                exit={{ opacity: 0 }}>
-                <Image
-                  className="w-full m-4 rounded shadow-md h-3/4"
-                  src={photo}
-                  layout="fill"
-                  objectFit="scale-down"
-                  alt="Daniel e Rafa"
-                />
-              </motion.div>
+                exit={{ opacity: 0 }}
+                className="max-h-full m-4 rounded shadow-md"
+                src={photo}
+                alt="Daniel e Rafa"
+              />
             )}
           </AnimatePresence>
         </div>
