@@ -29,26 +29,7 @@ export default function Home({
   return (
     <>
       <Head>
-        <link
-          rel="apple-touch-icon"
-          sizes="180x180"
-          href="/apple-touch-icon.png"
-        />
-        <link
-          rel="icon"
-          type="image/png"
-          sizes="32x32"
-          href="/favicon-32x32.png"
-        />
-        <link
-          rel="icon"
-          type="image/png"
-          sizes="16x16"
-          href="/favicon-16x16.png"
-        />
         <title>Daniel ❤️ Rafa</title>
-        <Html lang="pt-br" />
-        <meta name="description" content="Uma historia de amor"/>
       </Head>
       <div className="flex flex-col items-center justify-center w-screen h-screen bg-blue-300">
         <div className="flex flex-col items-center justify-center px-12 py-8 m-4 bg-white rounded-lg shadow-md">
