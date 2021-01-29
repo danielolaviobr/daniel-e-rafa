@@ -70,14 +70,18 @@ const Photo: React.FC<PhotoProps> = ({ photo_url = stockPhoto }) => {
         <div className="flex flex-col items-center justify-center h-screen overflow-hidden">
           <AnimatePresence>
             {!isLoading && (
-              <motion.img
+              <motion.div
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
-                className="max-h-full m-4 rounded shadow-md"
-                src={photo}
-                alt="Daniel e Rafa"
-              />
+                className="max-h-full m-4 rounded shadow-md">
+                <Image
+                  src={photo}
+                  alt="Daniel e Rafa"
+                  layout="fill"
+                  objectFit="contain"
+                />
+              </motion.div>
             )}
           </AnimatePresence>
         </div>
