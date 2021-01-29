@@ -45,7 +45,25 @@ const Photo: React.FC<PhotoProps> = ({ photo_url = stockPhoto }) => {
   return (
     <>
       <Head>
+        <link
+          rel="apple-touch-icon"
+          sizes="180x180"
+          href="/apple-touch-icon.png"
+        />
+        <link
+          rel="icon"
+          type="image/png"
+          sizes="32x32"
+          href="/favicon-32x32.png"
+        />
+        <link
+          rel="icon"
+          type="image/png"
+          sizes="16x16"
+          href="/favicon-16x16.png"
+        />
         <title>Daniel ❤️ Rafa</title>
+        <meta name="description" content="Um historia de amor" />
       </Head>
       <div className="flex flex-col items-center justify-center h-screen p-8 overflow-hidden bg-blue-300">
         <Heading>Daniel ❤️ Rafa</Heading>
