@@ -29,7 +29,9 @@ class MyDocument extends Document {
           />
 
           <Html lang="pt-br" />
-          <meta name="description" content="Uma historia de amor"></meta>
+          <meta name="description" content="Uma historia de amor">
+            Uma historia de amor
+          </meta>
         </Head>
         <body>
           <Main />
