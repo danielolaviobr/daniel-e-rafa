@@ -31,11 +31,11 @@ const Settings: React.FC = () => {
   }, []);
 
   const submitFileForm = useCallback(
-    (e) => {
+    async (e) => {
       e.preventDefault();
       setFileLoading(true);
       const storageRef = app.storage().ref();
-      files.forEach(async (file) => {
+      const promises = files.map(async (file) => {
         console.log(file);
         const photoId = uuid();
         const fileRef = storageRef.child(photoId);
@@ -47,6 +47,8 @@ const Settings: React.FC = () => {
           used: false,
         });
       });
+
+      await Promise.all(promises);
       fileInputRef.current.value = "";
       setFileLoading(false);
     },
